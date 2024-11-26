@@ -24,13 +24,13 @@ def total_score():
     print("\n")
 
 def total_subject():
-    z=data3.groupby(["Subject"])["Score"].mean()
+    z =data3.groupby(["Subject"])["Score"].mean()
     print("#####")
     print("The average of each subject is..")
     print(z)
     print("\n")
 
-data2 = ({'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Alice', 'Bob', 'Charlie'],
+data2  = ({'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Alice', 'Bob', 'Charlie'],
                     'Subject': ['Math', 'Math', 'Math', 'Math', 'English', 'English', 'English'],
                     'Score': [80, 90, 75, 85, 85, 88, 92],
                     'Attendance': [90, 95, 80, 92, 88, 93, 78]})
