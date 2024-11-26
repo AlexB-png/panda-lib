@@ -5,6 +5,7 @@ os.system('CLS')
 def average_score():
     x = data3.groupby(['Name','Subject','Attendance'])["Score"].mean()
     print("#####")
+    print("\n")
     print("The average score")
     print(x)
     print("\n")
@@ -12,6 +13,7 @@ def average_score():
 def average_attendance():
     y=data3.groupby(['Name'])["Attendance"].mean()
     print("#####")
+    print("\n")
     print("The average attendance")
     print(y)
     print("\n")
@@ -19,6 +21,7 @@ def average_attendance():
 def total_score():
     z=data3["Score"].mean()
     print("#####")
+    print("\n")
     print("The average of all of the scores is..")
     print(z)
     print("\n")
@@ -26,6 +29,7 @@ def total_score():
 def total_subject():
     z =data3.groupby(["Subject"])["Score"].mean()
     print("#####")
+    print("\n")
     print("The average of each subject is..")
     print(z)
     print("\n")
@@ -44,3 +48,5 @@ average_attendance()
 total_score()
 
 total_subject()
+
+data3.to_csv("great.csv")
