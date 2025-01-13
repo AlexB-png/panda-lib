@@ -1,0 +1,25 @@
+import pandas as pd
+data = pd.read_csv(
+    ('https://docs.google.com/spreadsheets/'
+    'd/e/2PACX-1vR6-zV7rhKrdkrRf4ZlN9rwQ1DDML'
+    'WZNLXvULBxtj5jaZQGTq_FSsR_D_9SeqGxjtjiI'
+    'uTFstbW8CFK/pub?output=csv')
+)
+data.columns = data.columns.str.strip()
+data = data.drop(['Bus','Time','Lateness','Unnamed: 3'], axis=1)
+data = data.sort_values("Age")
+x = data.loc[data["Survived"] == False]
+y = data.loc[data["Survived"] == True]
+sort = x.sort_values("Age", ascending=False)
+sort2 = y.sort_values("Age", ascending=False)
+print(sort)
+print("")
+print(sort2)
+print("")
+print("The sorted values for Survivals are:")
+print(len(y))
+print("The Sorted values for Deaths are:")
+print(len(x))
+
+print(data.loc[data["Age"] > 18])
+
