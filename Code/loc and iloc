@@ -1,0 +1,15 @@
+import pandas as pd
+print("1")
+data = {'A': [1, 2, 3, 4, 5],'B': [6, 7, 8, 9, 10],'C': [11, 12, 13, 14, 15]}
+x = pd.DataFrame(data,index=["Row1", "Row2", "Row3", "Row4", "Row5"])
+print(x)
+print("")
+print("2")
+print(x.loc[x["C"] == 14])
+print("")
+print("3")
+temp= x.loc["Row1":"Row4",["A","B"]]
+print(temp.loc["Row1",["B"]])
+print("")
+print("4")
+print(x.iloc[0:5 , 0:3])
